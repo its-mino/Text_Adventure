@@ -1,5 +1,7 @@
 package rekt_adventure;
 
+import java.util.Scanner;
+
 class skeleton
 {
 	static String name = "skeleton";
@@ -28,38 +30,22 @@ class boss
 	static int attack = 5;
 }
 
+class player
+{
+	int health = 10;
+	int bullets = 4;
+}
+
 
 public class adventure {
-
-
-	public static String chooseMonster()
-	{
-		int monster = (int)((Math.random()) * (3));
-		
-		if(monster == 1)
-		{
-			return "skeleton";
-		}
-		
-		else if(monster == 2)
-		{
-			return "zombie";
-		}
-		
-		else 
-		{
-			return "imp";
-		}
-		
-	}
 	
-	public static boolean combat()
+	public static void combat(String monster, player player)
 	{
-		String monster = chooseMonster();
+		Scanner input = new Scanner(System.in);
 		
-		String name;
-		int health;
-	    int attack;
+		String name = "";
+		int health = 0;
+	    int attack = 0;
 		
 		if(monster.equals("skeleton"))
 		{
@@ -82,12 +68,49 @@ public class adventure {
 			attack = imp.attack;
 		}
 		
-		return true;
+		boolean done = false;
+		
+		while(!done)
+		{
+			System.out.printf("You have %d health left and %d bullets. %n"
+					+ "What would you like to do (choose a number)?", player.health, player.bullets);
+			
+			System.out.println("1. Attack with your sword\n"
+					+ "2. Shoot it with your gun\n"
+					+ "3. Run");
+			
+			int action = input.nextInt();
+			
+			if(action == 1)
+			{
+				//sword attack text
+				health-= 2;
+				player.health -= attack;
+			}
+			else if(action == 2)
+			{
+				//gun attack text
+				health --;
+			}
+			else
+			{
+				//kill player
+			}
+			
+			if(health <= 0)
+			{
+				//monster dies text
+				done = true;
+			}
+		}
+		
+		
+		input.close();
 	}
 	
 	public static void main(String[] args) {
 	// TODO Auto-generated method stub
-
+	player player = new player();
 	System.out.println("Welcome to Rekt Adventure, created by Brendan Sileo and Nick Orr.");
 	System.out.println("");
 	System.out.println("Welcome to Rekt Adventure, created by Brendan Sileo and Nick Orr");
@@ -117,6 +140,7 @@ public class adventure {
 	System.out.print("You see something move in your peripheral vision. An imp jumps in front of you ");
 	System.out.println("His appearance is mennacing, but he looks weak.");
 	System.out.println("Do you attack or run? (a/r)");
+	
 	//TODO If user chooses run - kill screen, 
 	
 	System.out.print("Do you want to attack with your sword or gun? (s/g)");
