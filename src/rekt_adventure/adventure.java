@@ -37,6 +37,10 @@ public class adventure {
 	System.out.print("Do you attack or run? (a/r)");
 	//TODO If user chooses run, kill screen
 	
+	System.out.println("You begin to run. The screams are petrifying as you further yourself from them. You think you have gotten away");
+	System.out.println(" but you hear a slicing sound and look down to see a sword in your abdomen.");
+	System.out.println();
+	System.out.print("~~~~GAME OVER~~~~");
 
 	
 	
