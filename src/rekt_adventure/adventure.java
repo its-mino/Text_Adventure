@@ -18,10 +18,30 @@ public class adventure {
 	
 	System.out.println("As you enter the cave, you take inventory of what you have...");
 	System.out.println();
-	System.out.println("A sword, a gun, four bullets and a rope. (view this again by typing inventory)");
+	System.out.println("A sword, a gun, four bullets and a rope. (view this again by typing 'inventory')");
+	//TODO Add inventory system
 	System.out.println();
 	System.out.print("You enter a split in the cave. You hear screams from the left and see a distant light to the right.");
 	System.out.print("Which way do you want to go?  (L/R)");
+	//TODO Add left or right choice
+	
+	System.out.println("As you walk to the left, the screams become much louder.");
+	System.out.println();
+	
+	System.out.print("You enter a room, and see a human figured strung up. Blood is pouring from ");
+	System.out.print("their body, and is creating a pool of blood on the ground. ");
+	System.out.println();
+	
+	System.out.print("You see something move in your peripheral vision. An imp jumps in front of you ");
+	System.out.println("His appearance is mennacing, but he looks weak.");
+	System.out.print("Do you attack or run? (a/r)");
+	//TODO If user chooses run, kill screen
+	
+
+	
+	
+	//System.out.print("as you walk to the right, the light becomes dimmer.");
+	
 		
 		
 		
