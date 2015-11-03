@@ -43,7 +43,6 @@ public class adventure {
 	System.out.print("~~~~GAME OVER~~~~");
 
 	
-	
 	//System.out.print("as you walk to the right, the light becomes dimmer.");
 	
 		
