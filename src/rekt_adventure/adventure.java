@@ -115,15 +115,17 @@ public class adventure {
 	player player = new player();	
 	
 	System.out.println("Welcome to Rekt Adventure, created by Brendan Sileo and Nick Orr.");
-	System.out.println("");
-	System.out.println("Welcome to Rekt Adventure, created by Brendan Sileo and Nick Orr");
+	System.out.println();
  	System.out.print("You begin your journey as you approach a dreary cave. Bats fly out ");
 	System.out.println("as you stand at the mouth of the cave, giving an ominous effect. ");
 	System.out.println("Do you enter? (y/n)");
 	System.out.println();
-	System.out.print("right as you approach the mouth of the cave. Do you enter? (y/n)");
- 	//TODO Allow user to not enter
+	System.out.println("right as you approach the mouth of the cave. Do you enter? (y/n)");
  	
+	//TODO If user chooses no, end game.
+	System.out.print("You choose to not enter the cave. Maybe another time...");
+ 	
+	//TODO Else
 	System.out.println("As you enter the cave, you take inventory of what you have...");
 	System.out.println();
 	System.out.println("A sword, a gun, four bullets, ten hearts, and a rope. (view this again by typing 'inventory')");
@@ -171,7 +173,7 @@ public class adventure {
 //	TODO add this game over method
 //	System.out.print("~~~~GAME OVER~~~~");
 //	System.exit(0);
-
+	
 	System.out.println();
 	
 	System.out.println("You look around the room to see there is only one way forward. You procede throught the opening");
@@ -183,16 +185,38 @@ public class adventure {
 	System.out.println("'Voiceless it cries, Wingless flutters, Toothless bites, Mouthless mutters.' ");
 	System.out.println();
 	System.out.println("You can choose to go left or right (l/r)");
-	//TODO Allow user to choose path, but it will do nothing 
-	System.out.print("");
+	//TODO Allow user to choose path, but it will do nothing. 
+	
+	System.out.println("As you are deciding which way to go, a gust of wind sweeps you away from the exit.");
+	System.out.print("As you are being carried by the wind, you begin to hear roars, and see what looks like fire in the distance");
 	
 	System.out.println();
 	
-	//System.out.print("as you walk to the right, the light becomes dimmer.");
+	System.out.print("The wind begins to die down, and you are brought back down to the ground. ");
 	
+	//Dragon Encounter at the bottom as both will be the same final text
+	
+	
+	//Text for right path
+	System.out.print("As you walk to the right, the light becomes dimmer.");
+	System.out.println("You hear moaning come from further down the  hall and then a sharp scream.");
+	System.out.print("You enter the room to find a horrifying scene. There is a woman on fire stumbling around the room.");
+	System.out.print("");
 		
 		
 		
+		
+	
+	
+	System.out.print("You procede down the tunnel. Suddenly there is a loud roar, and you see fire.");
+	System.out.println("You encountered a dragon.");
+	System.out.println();
+	
+	System.out.println("Do you want to fight? (y/n)");
+	//TODO Take in users input
+	
+	System.out.print("As you attempt to flee, the dragon lets out a breath of fire. Your skin begins to burn as you crawl towards the exit.");
+	//Game over screen
 	}
 
 }
