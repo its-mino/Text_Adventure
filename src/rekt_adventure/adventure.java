@@ -100,8 +100,8 @@ public class adventure {
  	
 	System.out.println("As you enter the cave, you take inventory of what you have...");
 	System.out.println();
-	System.out.println("A sword, a gun, four bullets and a rope. (view this again by typing 'inventory')");
-	//TODO Add inventory system
+	System.out.println("A sword, a gun, four bullets, ten hearts, and a rope. (view this again by typing 'inventory')");
+	//TODO Add inventory system with hearts and bullets update
 	System.out.println();
 	System.out.print("You enter a split in the cave. You hear screams from the left and see a distant light to the right.");
 	System.out.print("Which way do you want to go?  (L/R)");
@@ -109,21 +109,32 @@ public class adventure {
 	
 	System.out.println("As you walk to the left, the screams become much louder.");
 	System.out.println();
-	
+//Imp Encounter	
 	System.out.print("You enter a room, and see a human figured strung up. Blood is pouring from ");
 	System.out.print("their body, and is creating a pool of blood on the ground. ");
 	System.out.println();
 	
 	System.out.print("You see something move in your peripheral vision. An imp jumps in front of you ");
 	System.out.println("His appearance is mennacing, but he looks weak.");
-	System.out.print("Do you attack or run? (a/r)");
-	//TODO If user chooses run, kill screen
+	System.out.println("Do you attack or run? (a/r)");
+	//TODO If user chooses run - kill screen, 
+	
+	System.out.print("Do you want to attack with your sword or gun? (s/g)");
+	//If user attacks with gun, take no damage, imp dies, reduce bullets by one. If user attacks with sword, health reduced by 4, imp dies.
+	
+	
+	
 	
 	System.out.println("You begin to run. The screams are petrifying as you further yourself from them. You think you have gotten away");
-	System.out.println(" but you hear a slicing sound and look down to see a sword in your abdomen.");
+	System.out.println(" but you hear a slicing sound and look down to see a sword extending out of your abdomen.");
 	System.out.println();
-	System.out.print("~~~~GAME OVER~~~~");
 
+//	TODO add this game over method
+//	System.out.print("~~~~GAME OVER~~~~");
+//	System.exit(0);
+
+	
+	
 	
 	//System.out.print("as you walk to the right, the light becomes dimmer.");
 	
