@@ -112,8 +112,8 @@ public class adventure {
 	// TODO Auto-generated method stub
 
 		//Sword does two damage but you take the enemies damage, gun does one, but you take no damage 
-		
-
+	player player = new player();	
+	
 	System.out.println("Welcome to Rekt Adventure, created by Brendan Sileo and Nick Orr.");
 	System.out.println("");
 	System.out.println("Welcome to Rekt Adventure, created by Brendan Sileo and Nick Orr");
