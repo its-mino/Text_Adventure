@@ -200,22 +200,33 @@ public class adventure {
 	
 	System.out.println();
 	
-	System.out.print("The wind begins to die down, and you are brought back down to the ground. ");
+	System.out.println("The wind begins to die down, and you are brought back down to the ground. ");
+	System.out.println();
 	
 	//Dragon Encounter at the bottom as both will be the same final text
 	
 	
 	//Text for right path
 	System.out.print("As you walk to the right, the light becomes dimmer.");
-	System.out.println("You hear moaning come from further down the  hall and then a sharp scream.");
+	System.out.println("You hear moaning coming from further down the  hall and then a sharp scream.");
 	System.out.print("You enter the room to find a horrifying scene. There is a woman on fire stumbling around the room.");
-	System.out.print("");
+	System.out.println("");
 		
-		
-		
-		
+	System.out.println("Out of the corner of your eye, you see a figure moving in a slow, lethargic mannerism.");
+	System.out.println("It appears to be a zombie and it looks tough.");
+	System.out.println();
+	System.out.println();
+	System.out.println("You can choose to attack, or run. (a/r)");
+	//TODO Allow user choice
+	System.out.println();
+	System.out.print("You choose to attack the zombie. Do you want to use your gun or sword? (g/s)");
+	//TODO Allow user choice
 	
 	
+	
+	
+		/*
+	//Dragon
 	System.out.print("You procede down the tunnel. Suddenly there is a loud roar, and you see fire.");
 	System.out.println("You encountered a dragon.");
 	System.out.println();
@@ -225,6 +236,8 @@ public class adventure {
 	
 	System.out.print("As you attempt to flee, the dragon lets out a breath of fire. Your skin begins to burn as you crawl towards the exit.");
 	//Game over screen
+	*/
+	
 	}
 
 }
