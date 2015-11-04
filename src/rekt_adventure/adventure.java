@@ -21,6 +21,11 @@ class imp
 	static String name = "imp";
 	static int health = 1;
 	static int attack = 4;
+	static String gunText = "You fire a single shot at the imp. The bullet lands right between his eyes and he falls backwards as \n"
+			+ "blood begins to trickle from his wound.";
+	
+	static String swordText = "You charge at the imp with your sword. You take a swing but miss, and your sword creates sparks as it strikes the ground. \n"
+			+ "You take another slice at the imps head and cut through it.  While attacking, the imp cut you deeply.";
 }
 
 class boss
@@ -39,7 +44,7 @@ class player
 
 public class adventure {
 	
-	public static void combat(String monster, player player)
+	public static String combat(String monster, player player)
 	{
 		Scanner input = new Scanner(System.in);
 		
@@ -68,12 +73,10 @@ public class adventure {
 			attack = imp.attack;
 		}
 		
-		boolean done = false;
-		
-		while(!done)
+		while(true)
 		{
 			System.out.printf("You have %d health left and %d bullets. %n"
-					+ "What would you like to do (choose a number)?", player.health, player.bullets);
+					+ "What would you like to do (choose a number)?%n", player.health, player.bullets);
 			
 			System.out.println("1. Attack with your sword\n"
 					+ "2. Shoot it with your gun\n"
@@ -95,40 +98,60 @@ public class adventure {
 			else
 			{
 				//kill player
+				input.close();
+				return "ran";
 			}
 			
 			if(health <= 0)
 			{
 				//monster dies text
-				done = true;
+				input.close();
+				return "victory";
+			}
+			
+			if(player.health <= 0)
+			{
+				//kill player
+				input.close();
+				return "defeat";
 			}
 		}
 		
 		
-		input.close();
+		
+	}
+	
+	public static void gameOver()
+	{
+		System.out.print("~~~~GAME OVER~~~~");
+		System.exit(0);
 	}
 	
 	public static void main(String[] args) {
 	// TODO Auto-generated method stub
-
-		//Sword does two damage but you take the enemies damage, gun does one, but you take no damage 
+	Scanner input = new Scanner(System.in);
+		 
 	player player = new player();	
-	
+	String r;
 	System.out.println("Welcome to Rekt Adventure, created by Brendan Sileo and Nick Orr.");
 	System.out.println();
  	System.out.print("You begin your journey as you approach a dreary cave. Bats fly out ");
 	System.out.println("as you stand at the mouth of the cave, giving an ominous effect. ");
 	System.out.println("Do you enter? (y/n)");
 	System.out.println();
-	System.out.println("right as you approach the mouth of the cave. Do you enter? (y/n)");
+	r = input.next();
+	//System.out.println("right as you approach the mouth of the cave. Do you enter? (y/n)");
  	
-	//TODO If user chooses no, end game.
-	System.out.print("You choose to not enter the cave. Maybe another time...");
- 	
-	//TODO Else
+	//If user chooses no, end game.
+	if(r.equalsIgnoreCase("n"))
+	{
+		System.out.print("You choose to not enter the cave. Maybe another time...");
+		gameOver();
+	}
+	
 	System.out.println("As you enter the cave, you take inventory of what you have...");
 	System.out.println();
-	System.out.println("A sword, a gun, four bullets, ten hearts, and a rope. (view this again by typing 'inventory')");
+	System.out.println("A sword, a gun, four bullets, ten hearts, and a rope.");
 	//TODO Add inventory system with hearts and bullets update
 	System.out.println();
 	System.out.print("You enter a split in the cave. You hear screams from the left and see a distant light to the right.");
@@ -145,34 +168,19 @@ public class adventure {
 	System.out.print("You see something move in your peripheral vision. An imp jumps in front of you ");
 	System.out.println("His appearance is mennacing, but he looks weak.");
 	System.out.println();
-	System.out.println("Do you attack or run? (a/r)");
-	System.out.println();
-
-	//TODO If user chooses run - kill screen, 
+	r = combat("imp", player);
 	
-	System.out.println("Do you want to attack with your sword or gun? (s/g)");
-	System.out.println();
-	//If user attacks with gun, take no damage, imp dies, reduce bullets by one. If user attacks with sword, health reduced by 4, imp dies.
-	
-	//Text for gun
-	System.out.println("You fire a single shot at the imp. The bullet lands right between his eyes and he falls backwards as ");
-	System.out.println("blood begins to trickle from his wound.");
-	//Health 10, bullets 3
-	
-	//Text for sword
-	System.out.println("You charge at the imp with your sword. You take a swing but miss, and your sword creates sparks as it strikes the ground.");
-	System.out.println("You take another slice at the imps head and cut through it.  While attacking, the imp cut you deeply.");
-	//Health is now six
-	
-	
-	//Text for running
-	System.out.println("You begin to run. The screams are petrifying as you further yourself from them. You think you have gotten away");
-	System.out.println(" but you hear a slicing sound and look down to see a sword extending out of your abdomen.");
-	System.out.println();
-
-//	TODO add this game over method
-//	System.out.print("~~~~GAME OVER~~~~");
-//	System.exit(0);
+	if(r.equals("ran"))
+	{
+		//Text for running
+		System.out.println("You begin to run. The screams are petrifying as you further yourself from them. You think you have gotten away");
+		System.out.println(" but you hear a slicing sound and look down to see a sword extending out of your abdomen.");
+		System.out.println();
+		gameOver();
+	}
+	else{
+		System.out.println(r);
+	}
 	
 	System.out.println();
 	
