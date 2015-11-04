@@ -219,8 +219,31 @@ public class adventure {
 	System.out.println("You can choose to attack, or run. (a/r)");
 	//TODO Allow user choice
 	System.out.println();
-	System.out.print("You choose to attack the zombie. Do you want to use your gun or sword? (g/s)");
+	System.out.println("You choose to attack the zombie. Do you want to use your gun or sword? (g/s)");
 	//TODO Allow user choice
+	
+	System.out.println("You take a slice at the zombie, but it attacks back, lightly grazing you.");
+	System.out.println("You take a shot at the zombie, but it barely reacts to the bullet. Do you attack again? (y/n)");
+	//TODO No in this case will just kill you, and leads to the run away text
+	
+	System.out.println("Your attack causes the attacking zombie to fall to the ground and die.");
+	//TODO Zombie death text, because specifying if death by sword or gun would require more effort
+	
+	System.out.println("You attempt to run away but stumble into the woman on fire. The zombie catches up to you, and bites your neck.");
+	System.out.println("Slices of flesh hang from your neck as you attempt to crawl away, but you bleed out quickly.");
+	//TODO insert Game over screen
+	
+	//Post zombie killing text
+	System.out.println("You look around the room to see the woman on fire still walking around, and her body illuminates and exit.");
+	System.out.println("You leave the room and begin to hear a rattling sound coming from down the hall.");
+	
+	//Skeleton encounter
+	System.out.println("You enter the next room, which is lightly illuminated by torches on the wall.");
+	System.out.println("The source of the rattling becomes apparent as a skeleton turns around.");
+	System.out.println("Bits of torn flesh hang from its bones, which are lightly stained red.");
+	
+	System.out.println("You approach the monster. Do you want to attack? (y/n)");
+	
 	
 	
 	
