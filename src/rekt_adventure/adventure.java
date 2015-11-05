@@ -7,6 +7,10 @@ class skeleton
 	static String name = "skeleton";
 	static int health = 2;
 	static int attack = 2;
+	static String swordText = "You swing your sword at the skeleton, causing it to break apart,\n"
+		+ " but the falling bones are sharp and one punctures your foot, wounding you slightly.";
+	static String gunText = "You shoot the skeleton, causing parts of it to chip away, but it continues towards you.";
+	static String deathText = "Your attack caused it to break enough that it is no longer able to fight.";
 }
 
 class zombie
@@ -36,6 +40,9 @@ class boss
 	static String name = "dragon";
 	static int health = 5;
 	static int attack = 5;
+	static String swordText = "You charge the dragon with your sword. You hurt it but it also manages to retaliate before you back off.";
+	static String gunText = "You shoot the dragon, and it flinches. It appeared to only injure it slightly. ";
+	static String deathText = "After your barrage of attacks, you bested the dragon.";
 }
 
 class player
@@ -74,6 +81,14 @@ public class adventure {
 			attack = imp.attack;
 		}
 		
+		if(monster.equals("dragon"))
+		{
+			name = boss.name;
+			health = boss.health;
+			attack = boss.attack;
+		}
+		
+		
 		while(true)
 		{
 			System.out.printf("You have %d health left and %d bullets. %n"
@@ -97,13 +112,20 @@ public class adventure {
 				}
 				else if(monster.equals("skeleton"))
 				{
-					//System.out.println(skeleton.swordText);
+					System.out.println(skeleton.swordText);
+				}
+				else
+				{
+					System.out.println(boss.swordText);
 				}
 				health-= 2;
 				player.health -= attack;
 			}
 			else if(action == 2)
 			{
+				if(player.bullets > 0)
+				{
+				player.bullets--;
 				if(monster.equals("imp"))
 				{
 					System.out.println(imp.gunText);
@@ -114,9 +136,18 @@ public class adventure {
 				}
 				else if(monster.equals("skeleton"))
 				{
-					//System.out.println(skeleton.gunText);
+					System.out.println(skeleton.gunText);
+				}
+				else
+				{
+					System.out.println(boss.gunText);
 				}
 				health --;
+				}
+				else
+				{
+					System.out.println("You are out of bullets! Choose something else.");
+				}
 			}
 			else
 			{
@@ -137,11 +168,15 @@ public class adventure {
 				}
 				else if(monster.equals("zombie"))
 				{
-					System.out.println(zombie.swordText);
+					System.out.println(zombie.deathText);
 				}
 				else if(monster.equals("skeleton"))
 				{
-					//System.out.println(skeleton.swordText);
+					System.out.println(skeleton.deathText);
+				}
+				else if(monster.equals("dragon"))
+				{
+					System.out.println(boss.deathText);
 				}
 				return "victory";
 			}
@@ -169,7 +204,7 @@ public class adventure {
 		 
 	player player = new player();	
 	String r;
-	System.out.println("Welcome to Rekt Adventure, created by Brendan Sileo and Nick Orr.");
+	System.out.println("Welcome to The Adventure, created by Brendan Sileo and Nick Orr.");
 	System.out.println();
  	System.out.print("You begin your journey as you approach a dreary cave. Bats fly out ");
 	System.out.println("as you stand at the mouth of the cave, giving an ominous effect. ");
@@ -237,9 +272,9 @@ public class adventure {
 	System.out.println();
 	System.out.println("You can choose to go left or right (l/r)");
 	//TODO Allow user to choose path, but it will do nothing. 
-	
+	r = input.next();
 	System.out.println("As you are deciding which way to go, a gust of wind sweeps you away from the exit.");
-	System.out.print("As you are being carried by the wind, you begin to hear roars, and see what looks like fire in the distance");
+	System.out.print("As you are being carried by the wind, you begin to hear a rattling sound.");
 	
 	System.out.println();
 	
@@ -284,29 +319,10 @@ public class adventure {
 	System.out.println();
 	
 	
-	System.out.println();
-	System.out.println();
-	System.out.println("You can choose to attack, or run. (a/r)");
-	//TODO Allow user choice
-	System.out.println();
-	System.out.println("You choose to attack the zombie. Do you want to use your gun or sword? (g/s)");
-	//TODO Allow user choice
-	
-	System.out.println("You take a slice at the zombie, but it attacks back, lightly grazing you.");
-	System.out.println("You take a shot at the zombie, but it barely reacts to the bullet. Do you attack again? (y/n)");
-	//TODO No in this case will just kill you, and leads to the run away text
-	
-	System.out.println("Your attack causes the attacking zombie to fall to the ground and die.");
-	//TODO Zombie death text, because specifying if death by sword or gun would require more effort
-	
-	System.out.println("You attempt to run away but stumble into the woman on fire. The zombie catches up to you, and bites your neck.");
-	System.out.println("Slices of flesh hang from your neck as you attempt to crawl away, but you bleed out quickly.");
-	//TODO insert Game over screen
-	
 	//Post zombie killing text
 	System.out.println("You look around the room to see the woman on fire still walking around, and her body illuminates an exit.");
 	System.out.println("You leave the room and begin to hear a rattling sound coming from down the hall.");
-	
+	}}
 	//Skeleton encounter
 	System.out.println("You enter the next room, which is lightly illuminated by torches on the wall.");
 	System.out.println("The source of the rattling becomes apparent as a skeleton turns around.");
@@ -329,33 +345,12 @@ public class adventure {
 	{
 	System.out.println();
 	
-	
-	System.out.println("You approach the monster. Do you want to attack? (y/n)");
-	//TODO allow user to choose to fight or not
-	
-	System.out.println("You attempt to run, but the skeleton is fast. It quickly turns and cuts at your back, cutting your spinal cord, and paralyzing you.");
-	//Run text & game over
-	
-	//Attack with sword text
-	System.out.println("You swing your sword at the skeleton, causing it to break apart,");
-	System.out.println(" but the falling bones are sharp and one punctures your foot, wounding you slightly.");
-	
-	//Attack with gun text
-	System.out.println("You shoot the skeleton, causing parts of it to chip away, but it continues towards you.");
-	
-	//Death text
-	 System.out.println("Your attack caused it to break enough that it is no longer able to fight.");
-	
-	
-	
-	}
-	
 	//Dragon
 	System.out.print("You procede past the room and down a tunnel. Suddenly there is a loud roar, and you see fire.");
 	System.out.println("You encountered a dragon.");
 	System.out.println();
 	
-r = combat("dragon", player,input);
+	r = combat("dragon", player,input);
 	
 	if(r.equals("ran"))
 	{
@@ -371,26 +366,14 @@ r = combat("dragon", player,input);
 	else
 	{
 	System.out.println();
-	
-	System.out.println("Do you want to fight? (y/n)");
-	//TODO Take in users input
-	 
-	 System.out.println("");
-	 
-	 //Fight text
-System.out.println("You are ready to attack the dragon. Do you shoot (s) it or charge (c) it with your sword? (s/c)");
+	System.out.println("Behind the dragon's corpse you discover a room filled with the dragon's treasure. Congratulations, you have survived the cave!\nThe End!");
 
-//Shooting text
-System.out.println("You shoot the dragon, and it flinches. It appeared to only injur it slightly. ");
 
-//Dragon death text
-System.out.println("After your barrage of attacks, you bested the dragon.");
-
-	 
+	}
 				}
 			}
-		}	
+		
 	}
-}		
+		
 
 			
