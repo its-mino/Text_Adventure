@@ -47,10 +47,8 @@ class player
 
 public class adventure {
 	
-	public static String combat(String monster, player player)
+	public static String combat(String monster, player player, Scanner input)
 	{
-		Scanner input = new Scanner(System.in);
-		
 		String name = "";
 		int health = 0;
 	    int attack = 0;
@@ -122,7 +120,6 @@ public class adventure {
 			}
 			else
 			{
-				input.close();
 				return "ran";
 			}
 			
@@ -146,14 +143,12 @@ public class adventure {
 				{
 					//System.out.println(skeleton.swordText);
 				}
-				input.close();
 				return "victory";
 			}
 			
 			if(player.health <= 0)
 			{
 				//kill player
-				input.close();
 				return "defeat";
 			}
 		}
@@ -214,7 +209,7 @@ public class adventure {
 	System.out.print("You see something move in your peripheral vision. An imp jumps in front of you ");
 	System.out.println("His appearance is mennacing, but he looks weak.");
 	System.out.println();
-	r = combat("imp", player);
+	r = combat("imp", player, input);
 	
 	if(r.equals("ran"))
 	{
@@ -266,10 +261,10 @@ public class adventure {
 	System.out.print("You enter the room to find a horrifying scene. There is a woman on fire stumbling around the room.");
 	System.out.println("");
 		
-	System.out.println("Out of the corner of your eye, you see a figure moving in a slow, lethargic mannerism.");
+	System.out.println("Out of the corner of your eye, you see a figure moving in a slow, lethargic manner.");
 	System.out.println("It appears to be a zombie and it looks tough.");
 	
-	r = combat("zombie", player);
+	r = combat("zombie", player, input);
 	
 	if(r.equals("ran"))
 	{
@@ -317,7 +312,7 @@ public class adventure {
 	System.out.println("The source of the rattling becomes apparent as a skeleton turns around.");
 	System.out.println("Bits of torn flesh hang from its bones, which are lightly stained red. It looks strong, and relatively sturdy for a skeleton.");
 	
-	r = combat("skeleton", player);
+	r = combat("skeleton", player, input);
 	
 	if(r.equals("ran"))
 	{
