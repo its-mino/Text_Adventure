@@ -196,9 +196,14 @@ public class adventure {
 	//TODO Add inventory system with hearts and bullets update
 	System.out.println();
 	System.out.print("You enter a split in the cave. You hear screams from the left and see a distant light to the right.");
-	System.out.print("Which way do you want to go?  (L/R)");
+	System.out.print("Which way do you want to go?  (l/r)");
 	//TODO Add left or right choice
+
+	r=input.next();
 	
+	if(r.equalsIgnoreCase("l"))
+	{
+		
 	System.out.println("As you walk to the left, the screams become much louder.");
 	System.out.println();
 //Imp Encounter	
@@ -248,6 +253,12 @@ public class adventure {
 	
 	//Dragon Encounter at the bottom as both will be the same final text
 	
+	}
+	}
+	
+	
+	else if(r.equalsIgnoreCase("r"))
+	{
 	
 	//Text for right path
 	System.out.print("As you walk to the right, the light becomes dimmer.");
@@ -330,7 +341,7 @@ public class adventure {
 	System.out.println("You attempt to run, but the skeleton is fast. It quickly turns and cuts at your back, cutting your spinal cord, and paralyzing you.");
 	//Run text & game over
 	
-	
+	}
 	
 		/*
 	//Dragon
@@ -347,9 +358,8 @@ public class adventure {
 	System.out.print("As you attempt to flee, the dragon lets out a breath of fire. Your skin begins to burn as you crawl towards the exit.");
 	//Game over screen
 	*/
-	
-				}	
 			}
-		}
+		}	
 	}
-}
+}		
+			
