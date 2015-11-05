@@ -12,8 +12,11 @@ class skeleton
 class zombie
 {
 	static String name = "zombie";
-	static int health = 3;
+	static int health = 5;
 	static int attack = 1;
+	static String swordText = "You take a slice at the zombie, but it attacks back, lightly grazing you.";
+	static String gunText = "You take a shot at the zombie, but it barely reacts to the bullet.";
+	static String deathText = "Your attack causes the attacking zombie to fall to the ground and die.";
 }
 
 class imp
@@ -102,6 +105,12 @@ public class adventure {
 				return "ran";
 			}
 			
+			if(health <= 0 && player.health <= 0)
+			{
+				System.out.println("As you strike the finishing blow, the dragon takes one final swing, and you both fall to the floor, dead.");
+				
+			}
+			
 			if(health <= 0)
 			{
 				//monster dies text
@@ -178,10 +187,12 @@ public class adventure {
 		System.out.println();
 		gameOver();
 	}
-	else{
-		System.out.println(r);
+	else if(r.equals("defeat"))
+	{
+		gameOver();
 	}
-	
+	else
+	{
 	System.out.println();
 	
 	System.out.println("You look around the room to see there is only one way forward. You procede throught the opening");
@@ -262,5 +273,5 @@ public class adventure {
 	*/
 	
 	}
-
+	}
 }
