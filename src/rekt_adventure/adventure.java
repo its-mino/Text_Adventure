@@ -89,18 +89,39 @@ public class adventure {
 			
 			if(action == 1)
 			{
-				//sword attack text
+				if(monster.equals("imp"))
+				{
+					System.out.println(imp.swordText);
+				}
+				else if(monster.equals("zombie"))
+				{
+					System.out.println(zombie.swordText);
+				}
+				else if(monster.equals("skeleton"))
+				{
+					//System.out.println(skeleton.swordText);
+				}
 				health-= 2;
 				player.health -= attack;
 			}
 			else if(action == 2)
 			{
-				//gun attack text
+				if(monster.equals("imp"))
+				{
+					System.out.println(imp.gunText);
+				}
+				else if(monster.equals("zombie"))
+				{
+					System.out.println(zombie.gunText);
+				}
+				else if(monster.equals("skeleton"))
+				{
+					//System.out.println(skeleton.gunText);
+				}
 				health --;
 			}
 			else
 			{
-				//kill player
 				input.close();
 				return "ran";
 			}
@@ -113,7 +134,18 @@ public class adventure {
 			
 			if(health <= 0)
 			{
-				//monster dies text
+				if(monster.equals("imp"))
+				{
+					//System.out.println(imp.deathText);
+				}
+				else if(monster.equals("zombie"))
+				{
+					System.out.println(zombie.swordText);
+				}
+				else if(monster.equals("skeleton"))
+				{
+					//System.out.println(skeleton.swordText);
+				}
 				input.close();
 				return "victory";
 			}
