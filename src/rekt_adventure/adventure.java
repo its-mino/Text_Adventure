@@ -336,25 +336,61 @@ public class adventure {
 	System.out.println("You attempt to run, but the skeleton is fast. It quickly turns and cuts at your back, cutting your spinal cord, and paralyzing you.");
 	//Run text & game over
 	
+	//Attack with sword text
+	System.out.println("You swing your sword at the skeleton, causing it to break apart,");
+	System.out.println(" but the falling bones are sharp and one punctures your foot, wounding you slightly.");
+	
+	//Attack with gun text
+	System.out.println("You shoot the skeleton, causing parts of it to chip away, but it continues towards you.");
+	
+	//Death text
+	 System.out.println("Your attack caused it to break enough that it is no longer able to fight.");
+	
+	
+	
 	}
 	
-		/*
 	//Dragon
-	System.out.print("You procede down the tunnel. Suddenly there is a loud roar, and you see fire.");
+	System.out.print("You procede past the room and down a tunnel. Suddenly there is a loud roar, and you see fire.");
 	System.out.println("You encountered a dragon.");
+	System.out.println();
+	
+r = combat("dragon", player,input);
+	
+	if(r.equals("ran"))
+	{
+		//Text for running
+		System.out.print("As you attempt to flee, the dragon lets out a breath of fire. Your skin begins to burn as you crawl towards the exit.");
+		System.out.println();
+		gameOver();
+	}
+	else if(r.equals("defeat"))
+	{
+		gameOver();
+	}
+	else
+	{
 	System.out.println();
 	
 	System.out.println("Do you want to fight? (y/n)");
 	//TODO Take in users input
 	 
 	 System.out.println("");
-	 //
-	
-	System.out.print("As you attempt to flee, the dragon lets out a breath of fire. Your skin begins to burn as you crawl towards the exit.");
-	//Game over screen
-	*/
+	 
+	 //Fight text
+System.out.println("You are ready to attack the dragon. Do you shoot (s) it or charge (c) it with your sword? (s/c)");
+
+//Shooting text
+System.out.println("You shoot the dragon, and it flinches. It appeared to only injur it slightly. ");
+
+//Dragon death text
+System.out.println("After your barrage of attacks, you bested the dragon.");
+
+	 
+				}
 			}
 		}	
 	}
 }		
+
 			
