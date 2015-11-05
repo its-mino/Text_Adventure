@@ -225,6 +225,27 @@ public class adventure {
 		
 	System.out.println("Out of the corner of your eye, you see a figure moving in a slow, lethargic mannerism.");
 	System.out.println("It appears to be a zombie and it looks tough.");
+	
+	r = combat("zombie", player);
+	
+	if(r.equals("ran"))
+	{
+		//Text for running
+
+		System.out.println("You attempt to run away but stumble into the woman on fire. The zombie catches up to you, and bites your neck.");
+		System.out.println("Slices of flesh hang from your neck as you attempt to crawl away, but you bleed out quickly.");
+		System.out.println();
+		gameOver();
+	}
+	else if(r.equals("defeat"))
+	{
+		gameOver();
+	}
+	else
+	{
+	System.out.println();
+	
+	
 	System.out.println();
 	System.out.println();
 	System.out.println("You can choose to attack, or run. (a/r)");
@@ -245,13 +266,31 @@ public class adventure {
 	//TODO insert Game over screen
 	
 	//Post zombie killing text
-	System.out.println("You look around the room to see the woman on fire still walking around, and her body illuminates and exit.");
+	System.out.println("You look around the room to see the woman on fire still walking around, and her body illuminates an exit.");
 	System.out.println("You leave the room and begin to hear a rattling sound coming from down the hall.");
 	
 	//Skeleton encounter
 	System.out.println("You enter the next room, which is lightly illuminated by torches on the wall.");
 	System.out.println("The source of the rattling becomes apparent as a skeleton turns around.");
 	System.out.println("Bits of torn flesh hang from its bones, which are lightly stained red. It looks strong, and relatively sturdy for a skeleton.");
+	
+	r = combat("skeleton", player);
+	
+	if(r.equals("ran"))
+	{
+		//Text for running
+		System.out.println("You attempt to run, but the skeleton is fast. It quickly turns and cuts at your back, cutting your spinal cord, and paralyzing you.");
+		System.out.println();
+		gameOver();
+	}
+	else if(r.equals("defeat"))
+	{
+		gameOver();
+	}
+	else
+	{
+	System.out.println();
+	
 	
 	System.out.println("You approach the monster. Do you want to attack? (y/n)");
 	//TODO allow user to choose to fight or not
@@ -277,6 +316,8 @@ public class adventure {
 	//Game over screen
 	*/
 	
-	}
+				}	
+			}
+		}
 	}
 }
