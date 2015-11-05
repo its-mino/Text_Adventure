@@ -251,11 +251,13 @@ public class adventure {
 	//Skeleton encounter
 	System.out.println("You enter the next room, which is lightly illuminated by torches on the wall.");
 	System.out.println("The source of the rattling becomes apparent as a skeleton turns around.");
-	System.out.println("Bits of torn flesh hang from its bones, which are lightly stained red.");
+	System.out.println("Bits of torn flesh hang from its bones, which are lightly stained red. It looks strong, and relatively sturdy for a skeleton.");
 	
 	System.out.println("You approach the monster. Do you want to attack? (y/n)");
+	//TODO allow user to choose to fight or not
 	
-	
+	System.out.println("You attempt to run, but the skeleton is fast. It quickly turns and cuts at your back, cutting your spinal cord, and paralyzing you.");
+	//Run text & game over
 	
 	
 	
@@ -267,6 +269,9 @@ public class adventure {
 	
 	System.out.println("Do you want to fight? (y/n)");
 	//TODO Take in users input
+	 
+	 System.out.println("");
+	 //
 	
 	System.out.print("As you attempt to flee, the dragon lets out a breath of fire. Your skin begins to burn as you crawl towards the exit.");
 	//Game over screen
